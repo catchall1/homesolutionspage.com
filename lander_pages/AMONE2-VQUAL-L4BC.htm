@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.turbo-progress-bar {
   position: fixed;
   display: block;
@@ -20,162 +19,7 @@
 <meta name="csrf-token" content="jjt9CWCicL2X1Od4GTLwPpFQTIIvdtip-lpLoWA23SbXnd_gzPZVWzVFDvmVC_Mb5FrNZb1Qi8CFE1Af1NtnhQ">
   <meta name="csp-nonce">
 
-    <!-- Snippets Start -->
-    <script async="" src="./AMONE2-VQUAL-L4BC_files/fbevents.js.download"></script><script type="text/javascript" id="ipl4t" data-controller="snippets--predefined-templates--fbq-uuid-to-sub-five-controller">
-    !function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-            n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-        ' https://connect.facebook.net/en_US/fbevents.js');
-
-    (function () {
-        try {
-            var rewriteDOM = function () {
-                Promise.resolve().then(function () {
-                    var uuidGen = function () {
-                        return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-                            (
-                                c ^
-                                (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-                            ).toString(16)
-                        );
-                    };
-                    var uuid = uuidGen();
-                    var options = {
-                        external_id: uuid
-                    }
-                    if (typeof fbq != 'undefined' && fbq) {
-                        fbq('init', '568453515189119', options);
-                        fbq('track', 'PageView', options);
-                    } else {
-                        console.log('[params rewriting] no fbq pixel source to init');
-                    }
-                    var addParamsToUrl = function (url) {
-                        return params =>
-                            url + (url.indexOf("?") !== -1 ? "&" : "?") + params.substr(1);
-                    };
-
-                    var leadFormComponents = document.querySelectorAll("[data-controller=lead-forms--component]");
-                    var pageLinks = document.querySelectorAll("a");
-                    var forms = document.querySelectorAll("form");
-                    var answers = document.querySelectorAll(".button.answer[onclick]")
-                    var redirectableEl = document.querySelectorAll("[data-redirect]");
-                    var newTabRedirectableEl = document.querySelectorAll("[data-new-tab-redirect]");
-                    var linkRedirectCurrentTabUrlValue = document.querySelectorAll("[data-link-redirect-current-tab-url-value]")
-                    var linkRedirectNewTabUrlValue = document.querySelectorAll("[data-link-redirect-new-tab-url-value]")
-
-
-                    console.log('leadFormComponents', leadFormComponents)
-                    console.log('forms', forms)
-                    window.addEventListener('DOMContentLoaded', (event) => {
-                        console.log('DOM fully loaded and parsed');
-                        console.log("dom ready leadform", document.querySelectorAll("[data-controller=lead-forms--component]"))
-                    });
-                    Array.from(leadFormComponents).forEach(leadFormComponent => {
-                        var submitRedirectAttr = 'data-lead-forms--component-submit-redirect-url-value'
-                        var popupRedirectAttr = 'data-lead-forms--component-submit-popup-url-value'
-                        var redirectLink = leadFormComponent.getAttribute(submitRedirectAttr)
-                        var popupRedirect = leadFormComponent.getAttribute(popupRedirectAttr)
-                        if (redirectLink) leadFormComponent.setAttribute(submitRedirectAttr, addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                        if (popupRedirect) leadFormComponent.setAttribute(popupRedirectAttr, addParamsToUrl(popupRedirect)("&sub5=" + uuid));
-                    })
-                    Array.from(forms).forEach(form => {
-                        var redirect_link = form.getAttribute('redirect_link')
-                        var new_tab_redirect_link = form.getAttribute('new_tab_redirect_link')
-                        if (redirect_link) form.setAttribute('redirect_link', addParamsToUrl(redirect_link)("&sub5=" + uuid));
-                        if (new_tab_redirect_link) form.setAttribute('new_tab_redirect_link', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(redirectableEl).forEach(form => {
-                        var redirect_link = form.getAttribute('data-redirect')
-                        if (redirect_link) form.setAttribute('data-redirect', addParamsToUrl(redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(newTabRedirectableEl).forEach(form => {
-                        var new_tab_redirect_link = form.getAttribute('data-new-tab-redirect')
-                        if (new_tab_redirect_link) form.setAttribute('data-new-tab-redirect', addParamsToUrl(new_tab_redirect_link)("&sub5=" + uuid));
-                    })
-                    Array.from(linkRedirectCurrentTabUrlValue).forEach(form => {
-                        var redirectLink = form.getAttribute('data-link-redirect-current-tab-url-value')
-                        if (redirectLink) form.setAttribute('data-link-redirect-current-tab-url-value', addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                    })
-                    Array.from(linkRedirectNewTabUrlValue).forEach(form => {
-                        var redirectLink = form.getAttribute('data-link-redirect-new-tab-url-value')
-                        if (redirectLink) form.setAttribute('data-link-redirect-new-tab-url-value', addParamsToUrl(redirectLink)("&sub5=" + uuid));
-                    })
-                    var extractUrlFromHandler = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(clickHandlerStr.indexOf('https'), clickHandlerStr.lastIndexOf("'"));
-                    }
-                    var extractEverythingBeforeUrl = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(0, clickHandlerStr.indexOf('https'))
-                    }
-                    var extractEverythingAfterUrl = (clickHandlerStr) => {
-                        return clickHandlerStr.slice(clickHandlerStr.lastIndexOf("'"), clickHandlerStr.length)
-                    }
-                    var formatNewHandler = (oldHandlerStr, url) => {
-                        return `${extractEverythingBeforeUrl(oldHandlerStr)}${url}${extractEverythingAfterUrl(oldHandlerStr)}`
-                    }
-                    Array.from(answers).forEach(answer => {
-                        var clickHandlerStr = answer.getAttribute("onclick")
-                        if (extractUrlFromHandler(clickHandlerStr)) {
-                            parsedUrl = addParamsToUrl(extractUrlFromHandler(clickHandlerStr))("&sub5=" + uuid)
-                            answer.setAttribute('onclick', formatNewHandler(clickHandlerStr, parsedUrl))
-                        }
-                    })
-                    Array.from(pageLinks).forEach(link => {
-                        var href = link.href;
-                        if (href) link.href = addParamsToUrl(href)("&sub5=" + uuid);
-                    });
-
-                    function getMetaValue(name) {
-                        const element = document?.head?.querySelector(`meta[name="${name}"]`)
-                        return element?.getAttribute("content")
-                    }
-
-                    function saveToLS(key, value) {
-                        return new Promise((resolve, reject) => {
-                            try {
-                                localStorage.setItem(key, JSON.stringify(value))
-                                const results = JSON.parse(localStorage.getItem(key))
-                                resolve(results)
-                            } catch (error) {
-                                reject(error)
-                            }
-                        })
-                    }
-
-                    saveToLS("fb_sub_five", uuid).then(() => {
-                        window.dispatchEvent(new Event("storage"))
-                        console.log('teststorage')
-                    })
-                });
-            }
-            if (document && document.readyState && document.readyState === "complete") {
-                rewriteDOM()
-            } else {
-                window.addEventListener("DOMContentLoaded", () => {
-                    rewriteDOM()
-                });
-            }
-        } catch (e) {
-            console.log('[params rewriting] ERROR', e)
-        }
-    }())
-</script>
-
-
-<!-- Snippet End -->
+  
 
 
     <link rel="stylesheet" href="./AMONE2-VQUAL-L4BC_files/604.css" media="all" data-turbo-track="reload" defer="defer">
@@ -201,13 +45,13 @@
   </style>
 <script type="text/javascript" charset="UTF-8" src="./AMONE2-VQUAL-L4BC_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./AMONE2-VQUAL-L4BC_files/util.js.download"></script></head>
 
-<body data-lander-page-id="17" data-controller="modal event-tracker" data-modal-hidden-class="!hidden" data-session-location="{&quot;ip&quot;:&quot;37.19.221.230&quot;,&quot;type&quot;:&quot;ipv4&quot;,&quot;continent_code&quot;:&quot;NA&quot;,&quot;continent_name&quot;:&quot;North America&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;country_name&quot;:&quot;United States&quot;,&quot;region_code&quot;:&quot;TX&quot;,&quot;region_name&quot;:&quot;Texas&quot;,&quot;city&quot;:&quot;Houston&quot;,&quot;zip&quot;:&quot;77007&quot;,&quot;latitude&quot;:29.77042007446289,&quot;longitude&quot;:-95.41058349609375,&quot;location&quot;:{&quot;geoname_id&quot;:4699066,&quot;capital&quot;:&quot;Washington D.C.&quot;,&quot;languages&quot;:[{&quot;code&quot;:&quot;en&quot;,&quot;name&quot;:&quot;English&quot;,&quot;native&quot;:&quot;English&quot;}],&quot;country_flag&quot;:&quot;https://assets.ipstack.com/flags/us.svg&quot;,&quot;country_flag_emoji&quot;:&quot;🇺🇸&quot;,&quot;country_flag_emoji_unicode&quot;:&quot;U+1F1FA U+1F1F8&quot;,&quot;calling_code&quot;:&quot;1&quot;,&quot;is_eu&quot;:false},&quot;time_zone&quot;:{&quot;id&quot;:&quot;America/Chicago&quot;,&quot;current_time&quot;:&quot;2023-01-16T15:30:14-06:00&quot;,&quot;gmt_offset&quot;:-21600,&quot;code&quot;:&quot;CST&quot;,&quot;is_daylight_saving&quot;:false},&quot;currency&quot;:{&quot;code&quot;:&quot;USD&quot;,&quot;name&quot;:&quot;US Dollar&quot;,&quot;plural&quot;:&quot;US dollars&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;symbol_native&quot;:&quot;$&quot;},&quot;connection&quot;:{&quot;asn&quot;:212238,&quot;isp&quot;:&quot;Datacamp Limited&quot;}}" data-hidden-referrer="" data-action="click-&gt;event-tracker#handleClick">
+<body>
 
 
 
 
   <div>
-    <div id="icax"><div class="container mx-auto px-8 py-4 my-3"><div data-bold="inherit" data-gramm="false" id="ih7lf" class="ne elHeadline hsSize2 lh3 elMargin0 elBGStyle0 hsTextShadow0"><span id="ic4aa">The Banking World Is A Buzz With This New Loan Program</span></div><iframe allowfullscreen="allowfullscreen" src="./AMONE2-VQUAL-L4BC_files/777699944.html" id="ig31"></iframe><div class="full-width"><a href="https://path.searchformoney.io/lander_pages/29?sub5=1ad98eae-48e2-40df-a1bb-63101ef1323f" id="ivyi"></a></div><div id="ifnxj"><span id="irn1l"><span id="ix1lo">Join The Millions Of American Families Utilizing This Loan Program</span><br></span></div><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/18/?sub5=1ad98eae-48e2-40df-a1bb-63101ef1323f" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><button data-controller="button-base" data-action="button-base#click" class="shadow rounded w-full py-4 my-2 text-2lg text-white bg-primary text-[#fff]"><span id="ihnmr">Apply Now</span></button></div><div id="iw6mo"><span id="ins0s"><span id="idxr8"><span id="irk9i">Get Instant access to this special lending program</span></span><br></span></div><div id="ikqw5" class="gjs-row"><div id="io8e6"><div id="izh6u"><br><div id="ie5kp">Almost 50 million American’s will not be able to pay their credit card bill this month. That is a mind-numbing statistic.&nbsp;
+    <div id="icax"><div class="container mx-auto px-8 py-4 my-3"><div data-bold="inherit" data-gramm="false" id="ih7lf" class="ne elHeadline hsSize2 lh3 elMargin0 elBGStyle0 hsTextShadow0"><span id="ic4aa">The Banking World Is A Buzz With This New Loan Program</span></div><iframe allowfullscreen="allowfullscreen" src="https://player.vimeo.com/video/777699944?&autoplay=1" id="ig31"></iframe><div class="full-width"><a href="https://path.searchformoney.io/lander_pages/29?sub5=1ad98eae-48e2-40df-a1bb-63101ef1323f" id="ivyi"></a></div><div id="ifnxj"><span id="irn1l"><span id="ix1lo">Join The Millions Of American Families Utilizing This Loan Program</span><br></span></div><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="./AMONE2-VQUAL-L4BC2" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><button data-controller="button-base" data-action="button-base#click" class="shadow rounded w-full py-4 my-2 text-2lg text-white bg-primary text-[#fff]"><span id="ihnmr">Apply Now</span></button></div><div id="iw6mo"><span id="ins0s"><span id="idxr8"><span id="irk9i">Get Instant access to this special lending program</span></span><br></span></div><div id="ikqw5" class="gjs-row"><div id="io8e6"><div id="izh6u"><br><div id="ie5kp">Almost 50 million American’s will not be able to pay their credit card bill this month. That is a mind-numbing statistic.&nbsp;
               <span id="i81dr">If you’re struggling to pay bills this, you should apply for this little know loan program.&nbsp;<br></span></div><div id="i9s0p"><br></div><div id="ihxrl">It’s easy to fall behind on bills. Unexpected expenses always come up. But now, more than ever, those unexpected expenses can drive a hole in your budget. That’s why a there are different loan programs to help American families stay afloat.
             </div><div id="irqid"><br></div><div id="ihabi">If you have spoken to your credit card company or mortgage provider about forbearance/delaying a payment, you need to know there are more options available. It's ok that you don't know about this loan program, it's not ok if you don't learn more. Your finances depend on it, click above to learn more about this life changing loan program.&nbsp;
             </div><div data-gjs="redirectable_element" data-controller="link-redirect" data-link-redirect-current-tab-url-value="https://plusamericansavings.com/lander_pages/18/?sub5=1ad98eae-48e2-40df-a1bb-63101ef1323f" data-link-redirect-new-tab-url-value="" data-action="click-&gt;link-redirect#interceptClickWithRedirect" class="cursor-pointer"><button data-controller="button-base" data-action="button-base#click" class="shadow rounded w-full py-4 my-2 text-2lg text-white bg-primary text-[#fff]"><span id="iop25">Apply Now</span></button></div></div></div></div><p id="ilooe" class="d9 d10 d16 m9 m10 m16">
